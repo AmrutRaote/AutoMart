@@ -174,10 +174,15 @@ function Addlisting ()
                     <div>
                         <h2 className='my-6 text-xl font-medium'>Features</h2>
 
-                        <div className='grid grid-cols-2 gap-2 md:grid-cols-3'>
+                        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
                             { features.features.map( ( item, index ) => (
-                                <div key={ index } className='flex items-center gap-2'>
-                                    <input onChange={ ( e ) => handleFeatureChange( item?.name, e.target.checked ) } type='checkbox' checked={ featuresData?.[ item.name ] } className='text-white bg-white size-5' /> <h2>{ item.label }</h2>
+                                <div key={ index } className='flex items-center gap-3'>
+                                    <input
+                                        onChange={ ( e ) => handleFeatureChange( item?.name, e.target.checked ) }
+                                        type='checkbox'
+                                        checked={ featuresData?.[ item.name ] }
+                                        className='text-white bg-white size-5' />
+                                    <h2 >{ item.label }</h2>
                                 </div>
                             ) ) }
                         </div>

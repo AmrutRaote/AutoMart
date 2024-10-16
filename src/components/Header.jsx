@@ -9,14 +9,15 @@ function Header ()
     const { isSignedIn } = useUser()
 
 
+
     return (
         <div className='flex items-center justify-between p-5 shadow-sm'>
             <Link to='/'>
-                <img src="./AutoMart.png" className='h-[40px]' alt="Logo" />
+                <img src="/AutoMart.png" className='sm:h-[40px] h-[30px]' alt="Logo" />
             </Link>
 
             {/* Navigation links for medium screens and above */ }
-            <ul className='hidden md:gap-16 md:flex'>
+            <ul className='hidden sm:gap-8 md:gap-16 md:flex'>
                 <Link to='/'>
                     <li className='font-medium transition-all cursor-pointer hover:scale-105 hover:text-primary'>Home</li>
                 </Link>
@@ -33,22 +34,22 @@ function Header ()
 
             {/* User Actions */ }
             { isSignedIn ? (
-                <div className='flex items-center gap-2 md:gap-5'>
+                <div className='flex items-center gap-1 md:gap-5'>
                     <Link to='/profile'>
-                        <Button>My Profile</Button>
+                        <Button className='p-3 text-xs sm:text-base'>My Profile</Button>
                     </Link>
                     <Link to='/add-listing'>
-                        <Button>Submit Listing</Button>
+                        <Button className='p-3 text-xs sm:text-base'>Submit Listing</Button>
                     </Link>
                     <UserButton />
                 </div>
             ) : (
                 <div className='flex items-center gap-2 md:gap-5'>
                     <SignInButton mode='modal' forceRedirectUrl='/'>
-                        <Button>Sign In</Button>
+                        <Button className='p-3 text-xs sm:text-base'>Sign In</Button>
                     </SignInButton>
                     <Link to='/add-listing'>
-                        <Button >Submit Listing</Button>
+                        <Button className='p-3 text-xs sm:text-base' >Submit Listing</Button>
                     </Link>
                 </div>
             ) }

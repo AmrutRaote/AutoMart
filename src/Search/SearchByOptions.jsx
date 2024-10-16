@@ -55,7 +55,7 @@ function SearchByOptions ()
     return (
         <div className="flex flex-col min-h-screen">
             <Header />
-            <div className='flex justify-center p-16 bg-blue-900'>
+            <div className='flex justify-center py-16 bg-blue-900'>
                 <Search />
             </div>
 

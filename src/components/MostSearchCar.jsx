@@ -41,7 +41,7 @@ function MostSearchCar ()
     ////////////////////////////////////////////////////////////////////////////////////
 
     return (
-        <div className='mx-5 md:mx-24' >
+        <div className='mx-24' >
             <h2 className='mt-16 text-2xl font-bold text-center md:text-3xl mb-7'>Most Searched Cars</h2>
 
             <Carousel>

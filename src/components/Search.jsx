@@ -14,12 +14,12 @@ function Search ()
     const [ price, setPrice ] = useState()
 
     return (
-        <div className="flex flex-col items-center gap-10 p-2 px-5 bg-white rounded-md md:p-5 md:rounded-full md:flex-row w-[90%] md:w-[60%]">
+        <div className="flex flex-col items-center gap-10 p-2 px-4 bg-white rounded-md md:p-5 md:rounded-full md:flex-row w-[80%] md:w-[60%]">
             <Select onValueChange={ ( value ) => setCars( value ) }>
                 <SelectTrigger className="w-full text-lg shadow-none outline-none md:border-none">
                     <SelectValue placeholder="Condition" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent >
                     <SelectItem value="New">New</SelectItem>
                     <SelectItem value="Used">Used</SelectItem>
                     <SelectItem value="Certified Pre-Owned">Certified Pre-Owned</SelectItem>
@@ -57,9 +57,9 @@ function Search ()
             {/* // Link to search page with query params set params as /search?cars=New&make=BMW&price=Low-to-High  */ }
             <Link to={ !cars || !make || !price ? "/#" : `/search?cars=${ cars }&make=${ make }&price=${ price }` }>
                 <CiSearch
-                    className={ `p-3 text-[50px] transition-all cursor-pointer font-bold text-white rounded-full 
-                ${ !cars || !make || !price ? "bg-gray-400 cursor-not-allowed" : "bg-primary hover:scale-105" }` }
                     disabled={ !cars || !make || !price }
+                    className={ `p-3 text-[50px] transition-all cursor-pointer font-bold text-white rounded-full 
+                ${ !cars || !make || !price ? "bg-gray-400 cursor-no-drop" : "bg-primary hover:scale-105" }` }
                 />
             </Link>
         </div>
